@@ -1,0 +1,463 @@
+@import "tailwindcss";
+
+/* ================================
+   Color Theme
+   ================================ */
+
+:root {
+  --background: #fff8f5;
+  --foreground: #5f4a53;
+
+  --pink: #e8b4c8;
+  --pink-light: #f7dce6;
+  --pink-dark: #c989a4;
+
+  --lavender: #c9b8df;
+  --lavender-light: #eee7f7;
+
+  --cream: #fff8f5;
+  --white: #ffffff;
+
+  --brown: #795866;
+  --muted: #9b858d;
+
+  --sage: #b8c8bd;
+}
+
+/* ================================
+   Basic Reset
+   ================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(247, 220, 230, 0.8),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(201, 184, 223, 0.55),
+      transparent 35%
+    ),
+    var(--background);
+
+  color: var(--foreground);
+
+  font-family:
+    "Trebuchet MS",
+    "Arial Rounded MT Bold",
+    Arial,
+    sans-serif;
+}
+
+/* ================================
+   Main Content
+   ================================ */
+
+main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* ================================
+   Main Title
+   ================================ */
+
+h1 {
+  margin: 0 0 45px;
+
+  text-align: center;
+
+  color: var(--brown);
+
+  font-size: clamp(34px, 5vw, 52px);
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+/* ตกแต่งเล็ก ๆ ใต้หัวข้อ */
+
+h1::after {
+  content: " ♡ ♫ ♡ ";
+
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--pink-dark);
+
+  font-size: 20px;
+
+  letter-spacing: 6px;
+}
+
+/* ================================
+   Band Grid
+   ================================ */
+
+.band-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 28px;
+}
+
+/* จอ Tablet / Desktop */
+
+@media (min-width: 768px) {
+  .band-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================================
+   Band Card
+   ================================ */
+
+.band-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 2px solid var(--pink-light);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 25px rgba(121, 88, 102, 0.08),
+    0 3px 8px rgba(232, 180, 200, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* ตอนเอาเมาส์ไปวางบน Card */
+
+.band-card:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--pink);
+
+  box-shadow:
+    0 18px 35px rgba(121, 88, 102, 0.12),
+    0 8px 15px rgba(232, 180, 200, 0.18);
+}
+
+/* ================================
+   Band Image
+   ================================ */
+
+.band-card img {
+  display: block;
+
+  width: 100%;
+
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  margin-bottom: 20px;
+
+  background: var(--pink-light);
+}
+
+/* ================================
+   Band Name
+   ================================ */
+
+.band-card h2 {
+  margin: 0 0 10px;
+
+  color: var(--brown);
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+/* ================================
+   Genre
+   ================================ */
+
+.band-card p {
+  margin: 8px 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+/* ================================
+   Member Heading
+   ================================ */
+
+.band-card h3 {
+  display: inline-block;
+
+  margin: 20px 0 10px;
+
+  padding: 6px 14px;
+
+  background: var(--lavender-light);
+
+  color: #756184;
+
+  border-radius: 999px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+/* ================================
+   Member List
+   ================================ */
+
+.band-card ul {
+  margin: 5px 0 0;
+
+  padding-left: 20px;
+}
+
+.band-card li {
+  margin: 7px 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+/* ================================
+   Member Bullet
+   ================================ */
+
+.band-card li::marker {
+  color: var(--pink-dark);
+}
+
+/* ================================
+   Mobile
+   ================================ */
+
+@media (max-width: 767px) {
+  main {
+    padding: 40px 16px;
+  }
+
+  h1 {
+    margin-bottom: 35px;
+
+    font-size: 36px;
+  }
+
+  .band-card {
+    padding: 18px;
+
+    border-radius: 20px;
+  }
+
+  .band-card img {
+    height: 220px;
+  }
+}
+/* =========================
+   Band Detail Page
+   ========================= */
+
+.band-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.band-card-hint {
+  margin-top: 16px !important;
+  color: var(--pink-dark) !important;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+/* =========================
+   Band Detail
+   ========================= */
+
+.band-detail {
+  max-width: 1000px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--pink-dark);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-4px);
+}
+
+
+.band-detail-header {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--pink-light);
+  border-radius: 28px;
+  box-shadow:
+    0 10px 25px rgba(121, 88, 102, 0.08);
+  text-align: center;
+}
+
+.band-detail-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.band-detail-header h1 {
+  margin-bottom: 10px;
+}
+
+.band-detail-genre {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+
+.members-section {
+  margin-top: 45px;
+}
+
+.members-section h2 {
+  margin: 0 0 25px;
+  color: var(--brown);
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+.member-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--pink-light);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 20px rgba(121, 88, 102, 0.07);
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 30px rgba(121, 88, 102, 0.12);
+}
+
+
+.member-card img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  border: 5px solid var(--pink-light);
+}
+
+
+.member-card h3 {
+  margin: 0 0 8px;
+  color: var(--brown);
+  font-size: 21px;
+}
+
+
+.member-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 767px) {
+  .band-detail-header {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .band-detail-header img {
+    border-radius: 16px;
+  }
+
+  .members-section {
+    margin-top: 35px;
+  }
+
+  .members-section h2 {
+    font-size: 26px;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .member-card {
+    padding: 18px;
+  }
+
+  .member-card img {
+    width: 160px;
+    height: 160px;
+  }
+}
