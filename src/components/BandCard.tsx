@@ -30,6 +30,7 @@ export default function BandCard({
           width={400}
           height={250}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          unoptimized
         />
 
         <h2>{band.name}</h2>

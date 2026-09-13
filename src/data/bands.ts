@@ -6,7 +6,7 @@ export const bands: Band[] = [
     id: 1,
     name: "Three Man Down",
     genre: "Thai Pop Rock",
-    image: "/images/bands/Three Man Downs.jpg",
+    image: "/images/bands/three-man-down.jpg",
     members: [
       {
         id: 1,
