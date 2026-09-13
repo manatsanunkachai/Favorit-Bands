@@ -1,4 +1,4 @@
-import BandCard from "@/components/BandCard";
+import BandExplorer from "@/components/CourseExplorer";
 import { bands } from "@/data/bands";
 
 export default function Home() {
@@ -6,12 +6,9 @@ export default function Home() {
     <main>
       <h1>Favorite Bands</h1>
 
-      <section className="band-grid">
-        {bands.map((band) => (
-          <BandCard key={band.id} band={band} />
-        ))}
-      </section>
+      <BandExplorer bands={bands} />
     </main>
   );
 }
-// หน้าหลัก
+
+// หน้าหลัก เอาของต่างๆมาประกอบกัน หรือ เป็นตัวประกอบหน้าเว็บ

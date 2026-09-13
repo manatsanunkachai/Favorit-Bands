@@ -1,3 +1,4 @@
+//กำหนด Type ของข้อมูลวงดนตรี "หน้าตาของวง"
 export type BandMember = {
   id: number;
   name: string;

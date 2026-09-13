@@ -461,3 +461,64 @@ h1::after {
     height: 160px;
   }
 }
+.search-box {
+  margin: 24px auto;
+  max-width: 500px;
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+.search-box input:focus {
+  border-color: #999;
+}
+
+.band-card {
+  overflow: hidden;
+}
+
+.band-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.band-card button {
+  margin: 12px 0 16px;
+  padding: 7px 16px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.band-card button:hover {
+  background: #f5f5f5;
+}
+
+.follow-count {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.empty-state {
+  margin: 30px auto;
+  text-align: center;
+  color: #666;
+}

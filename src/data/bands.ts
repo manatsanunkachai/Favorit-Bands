@@ -1,4 +1,5 @@
-import type { Band } from "@/types/band";  //ชื่อวง และสมาชิกในวง
+//เก็บข้อมูลเริ่มต้นของวง แยกข้อมูลออกจาก UI
+import type { Band } from "@/types/band";  
 
 export const bands: Band[] = [
   {
